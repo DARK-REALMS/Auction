@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="LlamaEconomy">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/lib/LlamaEconomy.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

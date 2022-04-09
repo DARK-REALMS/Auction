@@ -1,10 +1,7 @@
 package getmc;
 
-import cn.nukkit.Player;
-import cn.nukkit.Server;
 import cn.nukkit.command.SimpleCommandMap;
 import cn.nukkit.item.Item;
-import cn.nukkit.item.enchantment.Enchantment;
 import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.plugin.PluginManager;
 import cn.nukkit.utils.Config;
@@ -42,20 +39,8 @@ public class Auction extends PluginBase {
     public Int2ObjectOpenHashMap<Item> chest18;
     public Int2ObjectOpenHashMap<Item> chest19;
     public Int2ObjectOpenHashMap<Item> chest20;
-//    public Int2ObjectOpenHashMap<Item> chest21;
-//    public Int2ObjectOpenHashMap<Item> chest22;
-//    public Int2ObjectOpenHashMap<Item> chest23;
-//    public Int2ObjectOpenHashMap<Item> chest24;
-//    public Int2ObjectOpenHashMap<Item> chest25;
-//    public Int2ObjectOpenHashMap<Item> chest26;
-//    public Int2ObjectOpenHashMap<Item> chest27;
-//    public Int2ObjectOpenHashMap<Item> chest28;
-//    public Int2ObjectOpenHashMap<Item> chest29;
-//    public Int2ObjectOpenHashMap<Item> chest30;
 
     private static AuctionConfig auctionConfig;
-
-//    public List<Item> chest1 = new ArrayList<>();
 
     public List<String> feedremove = new ArrayList<String>();
     public List<String> feedkt = new ArrayList<>();
@@ -80,7 +65,6 @@ public class Auction extends PluginBase {
 
     private void register(){
         SimpleCommandMap simpleCommandMap = getServer().getCommandMap();
-//        simpleCommandMap.register("ah", new AucCMD());
         simpleCommandMap.register("help", new AucCMD("ah", Auction.getAuctionConfig().commandDescription(), Auction.getAuctionConfig().usageMessage()));
 
         PluginManager pluginManager = getServer().getPluginManager();
@@ -99,15 +83,10 @@ public class Auction extends PluginBase {
 
         for(Map.Entry<String, Object> get2 : timercfg.getSections("Timer").getAll().entrySet()) {
             String get1 = get2.getKey();
-
-
             int timer = timercfg.getInt("Timer." + get1 + ".Count");
-
-
             timerList1.put(get1, timer);
 
         }
-
     }
 
     private void startSchedulerItemAuction(){
@@ -119,7 +98,6 @@ public class Auction extends PluginBase {
         auccfg.reload();
 
         try {
-
             instance.getServer().getScheduler().scheduleRepeatingTask(this.instance, new Runnable() {
                 @Override
                 public void run() {
@@ -221,5 +199,4 @@ public class Auction extends PluginBase {
     public static Auction getAuction(){
         return instance;
     }
-
 }

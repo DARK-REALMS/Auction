@@ -1,0 +1,5 @@
+getmc\Auction.class
+getmc\Command\AucCMD.class
+getmc\Listener\InventoryTransactionListener.class
+getmc\Utils\AuctionConfig.class
+getmc\Auction$1.class
